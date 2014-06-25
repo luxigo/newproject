@@ -22,7 +22,7 @@ git add .
 git commit -am "newproject"
 
 mkdir -p $GIT
-cp -a $SRC/$PROJECT $GIT
+git clone --bare $SRC/$PROJECT $GIT/$PROJECT
 
 git remote add origin $GIT/$PROJECT
 

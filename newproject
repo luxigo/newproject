@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+PROJECT="$1"
+if [ "$#" -ne 2 ] ; then
+  echo "usage: $(basename $0) <project_name>"
+fi
+
+SRC=~/src
+GIT=~/git
+
+mkdir -p $SRC
+mkdir $SRC/$PROJECT
+cd $SRC/$PROJECT
+
+touch README.md
+
+git init .
+git add .
+git commit -am "newproject"
+
+mkdir -p $GIT
+cp -a $SRC/$PROJECT $GIT
+
+git remote add origin $GIT/$PROJECT
+

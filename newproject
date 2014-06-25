@@ -3,8 +3,9 @@
 set -e
 
 PROJECT="$1"
-if [ "$#" -ne 2 ] ; then
+if [ "$#" -ne 1 ] ; then
   echo "usage: $(basename $0) <project_name>"
+  exit 1
 fi
 
 SRC=~/src
